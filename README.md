@@ -4,8 +4,28 @@ An AI search app inspired by Perplexity. Ask a question and the app searches the
 
 Built to learn **RAG** (Retrieval-Augmented Generation) with **Flutter**, **FastAPI**, and **WebSockets**.
 
-Add screenshots here, for example:
+## 📷 Screenshots
 
+### 🏠 Home Page
+<p align="center">
+  <img width="220" alt="Home 1" src="https://github.com/user-attachments/assets/2c94278f-e4b3-4685-8cea-57d21eb5da4a" />
+  <img width="220" alt="Home 2" src="https://github.com/user-attachments/assets/63439d54-908e-407f-9a87-4e8e7f691e34" />
+</p>
+
+---
+
+### ⏳ Loading State
+<p align="center">
+  <img width="220" alt="Loading" src="https://github.com/user-attachments/assets/d034111d-a849-4ce4-805a-7befd34dc2e8" />
+</p>
+
+---
+
+### 💡 Answer View
+<p align="center">
+  <img width="220" alt="Answer 1" src="https://github.com/user-attachments/assets/dd01a9c8-434f-4f47-94a8-f98b46bfd25f" />
+  <img width="220" alt="Answer 2" src="https://github.com/user-attachments/assets/399e8c37-95c6-46e7-baf3-e65964b08544" />
+</p>
 |---|---|---|
 
 
