@@ -46,10 +46,10 @@ sub?.cancel();
     return Skeletonizer(
       enabled: isLoading,
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 20),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start
             ,children: [
-            Text("Perplexity",style: TextStyle(
+            Text("Answer",style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold
             ),),
