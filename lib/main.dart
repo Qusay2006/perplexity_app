@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:perplexity_app/core/injection/injection.dart';
 import 'package:perplexity_app/core/theme/pallet.dart';
 import 'package:perplexity_app/data/chat_web_service.dart';
-import 'package:perplexity_app/pages/chat_page.dart';
 import 'package:perplexity_app/pages/home_page.dart';
 
 void main()async {
@@ -18,11 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: ThemeData(
+    return MaterialApp(debugShowCheckedModeBanner: false,theme: ThemeData(
         scaffoldBackgroundColor: Pallet.background,
     textTheme: GoogleFonts.interTextTheme(
       ThemeData.dark().textTheme
     )),
-      home:  ChatPage(question: 'question'),
+      home:  HomePage(),
     );}
 }

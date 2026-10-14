@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:perplexity_app/core/injection/injection.dart';
 import 'package:perplexity_app/data/chat_web_service.dart';

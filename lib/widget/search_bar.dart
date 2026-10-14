@@ -24,78 +24,84 @@ class _SearchBarrState extends State<SearchBarr> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Column(mainAxisAlignment: MainAxisAlignment.center
-          , children: [
-            const Text('data', style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w400,
-                letterSpacing: 0.5
-            ),),
-            const SizedBox(height: 17,),
-      
-            Container(margin: EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                border: Border.all(color: Pallet.searchBarBorder),
-                borderRadius: BorderRadius.circular(20),
-                color: Pallet.cardColor,
+      child: Padding(padding: EdgeInsetsGeometry.only(left: 20),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center
+            , children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: const Text('Whats on your mind today?', style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
+                    color: Colors.teal
+                ),),
               ),
-              width: 300,
-              height: 100,
-              child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      TextField(controller: searchText,
-                        decoration: InputDecoration(
-                            hintText: 'Search anything...',
-                            hintStyle: TextStyle(
-                                color: Pallet.textGrey,
-                                fontSize: 16),
-                            border: InputBorder.none
-                        ),
-                      textInputAction: TextInputAction.send,
-                      onSubmitted: (value) {
-                        if(searchText.text.isNotEmpty){
-                          getIt<ChatWebService>().chat(searchText.text);
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context) =>
-                                ChatPage(question: searchText.text
-                                    .trim()),));
-                        }
-                      },),
-      
-                      Row(
-                          children: [
-                            SearchBarButton(iconData: Icons.auto_awesome_outlined,text: 'Focus',),
-                            const SizedBox(width: 20,),
-                            SearchBarButton(iconData: Icons.circle_outlined,text: 'Attach',),
-                            const Spacer(),
-                            GestureDetector(
-                              onTap: () {
-                                if(searchText.text.isNotEmpty) {
-                                  getIt<ChatWebService>().chat(searchText.text);
-                                  Navigator.push(context, MaterialPageRoute(
-                                    builder: (context) =>
-                                        ChatPage(question: searchText.text
-                                            .trim()),));
-                                }
-                              },
-                              child: Container(
-                                padding: EdgeInsetsGeometry.all(9),
-                                decoration: BoxDecoration(
-                                    color: Pallet.submitButton,
-                                  borderRadius: BorderRadius.circular(40)
-                                ),
-                              child: Icon(Icons.arrow_forward,color: Pallet.background,
-                              size: 16,),),
-                            )
-                          ]),
-                    ],
-                  )
-      
+              const SizedBox(height: 20,),
+
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Pallet.searchBarBorder),
+                  borderRadius: BorderRadius.circular(20),
+                  color: Pallet.cardColor,
+                ),
+                width: 300,
+                height: 100,
+                child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        TextField(controller: searchText,
+                          decoration: InputDecoration(
+                              hintText: 'Search anything...',
+                              hintStyle: TextStyle(
+                                  color: Pallet.textGrey,
+                                  fontSize: 16),
+                              border: InputBorder.none
+                          ),
+                        textInputAction: TextInputAction.send,
+                        onSubmitted: (value) {
+                          if(searchText.text.isNotEmpty){
+                            getIt<ChatWebService>().chat(searchText.text);
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) =>
+                                  ChatPage(question: searchText.text
+                                      .trim()),));
+                          }
+                        },),
+
+                        Row(
+                            children: [
+                              SearchBarButton(iconData: Icons.auto_awesome_outlined,text: 'Focus',),
+                              const SizedBox(width: 20,),
+                              SearchBarButton(iconData: Icons.circle_outlined,text: 'Attach',),
+                              const Spacer(),
+                              GestureDetector(
+                                onTap: () {
+                                  if(searchText.text.isNotEmpty) {
+                                    getIt<ChatWebService>().chat(searchText.text);
+                                    Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) =>
+                                          ChatPage(question: searchText.text
+                                              .trim()),));
+                                  }
+                                },
+                                child: Container(
+                                  padding: EdgeInsetsGeometry.all(9),
+                                  decoration: BoxDecoration(
+                                      color: Colors.teal,
+                                    borderRadius: BorderRadius.circular(40)
+                                  ),
+                                child: Icon(Icons.arrow_forward,color: Pallet.background,
+                                size: 16,),),
+                              )
+                            ]),
+                      ],
+                    )
+
+                ),
               ),
-            ),
-          ]),
+            ]),
+      ),
     );
   }
 }

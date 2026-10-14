@@ -13,7 +13,7 @@ class ChatWebService {
   Stream<Map<String,dynamic>> get contentStream =>_contentController.stream;
   void connect(){
     //انشئنا اتصال مباشر
-    _webSocket = WebSocket(Uri.parse('ws://localhost:8000/ws/chat'));
+    _webSocket = WebSocket(Uri.parse('ws://10.0.2.2:8000/ws/chat'));
     //للاستماع للرسائل
     _webSocket!.messages.listen((event) {
       final data = json.decode(event);

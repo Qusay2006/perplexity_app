@@ -15,12 +15,11 @@ async def websocket_endpoint(websocket: WebSocket):
      try:
         # هي البيانات الجاية من المستخدم
         data = await websocket.receive_json()
-        print("RECEIVED:", data)   
         # هون عم نستخرج نص السؤال
         query = data.get("query")
 
         result = search.web_search(query)
-        
+
         sortedResult= sortService.sort_service(query , result)
 
         await websocket.send_json({
@@ -51,5 +50,5 @@ async def websocket_endpoint(websocket: WebSocket):
 def chat_endpoint(body : ChatBody):
      result = search.web_search(body.query)
      sortedResult= sortService.sort_service(body.query , result)
-
+     print("Sorted Result:", sortedResult)
      return llmService.generate_service(body.query , sortedResult)

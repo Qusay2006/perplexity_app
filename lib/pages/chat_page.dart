@@ -17,7 +17,6 @@ class ChatPage extends StatelessWidget {
     TextEditingController questionMore = TextEditingController();
     return Scaffold(
       body: Row(children: [
-        const SideNav(),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
@@ -34,6 +33,9 @@ class ChatPage extends StatelessWidget {
                   const SizedBox(height: 24),
                   //answer
                   const AnswerSection(),
+
+
+                  //TextBar
 
                   Column(
                     children: [
@@ -83,7 +85,6 @@ class ChatPage extends StatelessWidget {
             ),
           ),
         ),
-        Placeholder(fallbackWidth: 180, color: Colors.transparent,)
       ],),
     );
   }
