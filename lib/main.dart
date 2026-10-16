@@ -22,6 +22,6 @@ class MyApp extends StatelessWidget {
     textTheme: GoogleFonts.interTextTheme(
       ThemeData.dark().textTheme
     )),
-      home:  HomePage(),
+      home: const HomePage(),
     );}
 }

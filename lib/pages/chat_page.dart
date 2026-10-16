@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:perplexity_app/core/injection/injection.dart';
 import 'package:perplexity_app/core/theme/pallet.dart';
 import 'package:perplexity_app/data/chat_web_service.dart';
-import 'package:perplexity_app/widget/side_nav.dart';
 import 'package:perplexity_app/widget/sources_section.dart';
 
 import '../widget/answer_section.dart';

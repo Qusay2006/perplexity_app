@@ -15,7 +15,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final TextEditingController searchText=TextEditingController();
 
   @override
   void initState() {
@@ -25,7 +24,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void dispose() {
     super.dispose();
-    searchText.dispose();
   }
 
   @override

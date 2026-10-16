@@ -14,7 +14,7 @@ class SearchService:
             url = result.get("href", "")
            #يرسل طلب HTTP لزيارة الرابط وتنزيل هيكل الـ HTML الخام الخاص بالصفحة
             donwloaded = trafilatura.fetch_url(url) if url else None
-            #الدالة الأساسية لتحليل هيكل الـ HTML واستخراج المتن الرئيسي للخبر أو المقال
+            #الدالة الأساسية لتحليل هيكل الـ HTML واستخراج المتن يعني النص الاساسي  للخبر أو المقال
             content = trafilatura.extract(donwloaded,include_comments=False) if donwloaded else None
             results.append({
             'title':result.get("title",""),
